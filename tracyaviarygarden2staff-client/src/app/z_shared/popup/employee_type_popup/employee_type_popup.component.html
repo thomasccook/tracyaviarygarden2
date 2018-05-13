@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" (click)="close()" >&times;</button>
+       <h4 class="modal-title">Employee Type</h4>
+     </div>
+     
+     <div class="modal-body">
+     	<div class="employeeTypeCheckbox">
+	    	<input type="checkbox" [checked]="checkbox1" (change)="checkbox1 = !checkbox1">
+	    	<label >Manager</label>
+		</div>
+	
+		<div class="employeeTypeCheckbox">
+	    	<input type="checkbox" [checked]="checkbox2" (change)="checkbox2 = !checkbox2">
+	    	<label >Employee</label>
+	    </div>
+	    
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
+       <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+     </div>
+   </div>
+</div>

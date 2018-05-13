@@ -1,0 +1,21 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" (click)="close()" >&times;</button>
+       <h4 class="modal-title">Columns</h4>
+     </div>
+     <div class="modal-body">
+       
+       <label for="options">Columns:</label>
+       
+   		<div *ngFor="let column of columnList; let i = index">
+   			<input type="checkbox" [checked]="column.selected" (change)="onCheckedChange($event, i)"> {{column.displayName}}
+   		</div>
+              
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
+       <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+     </div>
+   </div>
+</div>
