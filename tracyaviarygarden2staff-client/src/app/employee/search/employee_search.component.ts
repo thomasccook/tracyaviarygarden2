@@ -4,7 +4,7 @@ import { RequestOptions } from '@angular/http';
 
 import {AuthHttp} from 'angular2-jwt';
 
-import { NumberRange, DateRange } from '../../z_shared/schema/shared.schema';
+import { NumberRange, DateRange } from '../../a_shared/schema/shared.schema';
 
 // Request
 import { EmployeeSearchRequest } from './employee_search.schema';
@@ -19,17 +19,17 @@ import { EmployeeService } from '../employee.service';
 
 // Pop-ups
 import { DialogService } from "ng2-bootstrap-modal";
-import { IdPopupComponent, IdPopupComponentInput, IdPopupComponentOutput } from '../../z_shared/popup/id_popup/id_popup.component';
-import { StringPatternPopupComponent, StringPatternPopupComponentInput, StringPatternPopupComponentOutput } from '../../z_shared/popup/string_pattern_popup/string_pattern_popup.component';
-import { NumberRangePopupComponent, NumberRangePopupComponentInput, NumberRangePopupComponentOutput } from '../../z_shared/popup/number_range_popup/number_range_popup.component';
-import { DateRangePopupComponent, DateRangePopupComponentInput, DateRangePopupComponentOutput } from '../../z_shared/popup/date_range_popup/date_range_popup.component';
-import { EmployeeTypePopupComponent, EmployeeTypePopupComponentInput, EmployeeTypePopupComponentOutput } from '../../z_shared/popup/employee_type_popup/employee_type_popup.component';
+import { IdPopupComponent, IdPopupComponentInput, IdPopupComponentOutput } from '../../a_shared/popup/id_popup/id_popup.component';
+import { StringPatternPopupComponent, StringPatternPopupComponentInput, StringPatternPopupComponentOutput } from '../../a_shared/popup/string_pattern_popup/string_pattern_popup.component';
+import { NumberRangePopupComponent, NumberRangePopupComponentInput, NumberRangePopupComponentOutput } from '../../a_shared/popup/number_range_popup/number_range_popup.component';
+import { DateRangePopupComponent, DateRangePopupComponentInput, DateRangePopupComponentOutput } from '../../a_shared/popup/date_range_popup/date_range_popup.component';
+import { EmployeeTypePopupComponent, EmployeeTypePopupComponentInput, EmployeeTypePopupComponentOutput } from '../../a_shared/popup/employee_type_popup/employee_type_popup.component';
 
 
 
-import { ColumnPopupComponent, ColumnPopupComponentInput, ColumnPopupComponentOutput} from '../../z_shared/popup/column_popup/column_popup.component';
+import { ColumnPopupComponent, ColumnPopupComponentInput, ColumnPopupComponentOutput} from '../../a_shared/popup/column_popup/column_popup.component';
 
-import {AppDataService} from '../../services/app-data.service';
+import {UserService} from '../../user/user.service';
 
 import { Observable } from 'rxjs/Observable';
 

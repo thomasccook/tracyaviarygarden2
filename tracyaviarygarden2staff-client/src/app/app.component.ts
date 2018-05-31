@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 
 
-import {UserService} from './services/user.service';
+import {LoginService} from './login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import {UserService} from './services/user.service';
 export class AppComponent {
   title = 'Tracy Aviary Garden';
 
-  constructor(private router: Router, private userService: UserService, private cdRef:ChangeDetectorRef) {
+  constructor(private router: Router, private loginService: LoginService, private cdRef:ChangeDetectorRef) {
 
   }
 
@@ -23,15 +23,15 @@ export class AppComponent {
   }
 
   logout() {
-    this.userService.logout();
+    this.loginService.logout();
     this.router.navigate(['/']);
   }
 
   get isAdminUser() {
-    return this.userService.isAdminUser();
+    return this.loginService.isAdminUser();
   }
 
   get isUser() {
-    return this.userService.isUser();
+    return this.loginService.isUser();
   }
 }

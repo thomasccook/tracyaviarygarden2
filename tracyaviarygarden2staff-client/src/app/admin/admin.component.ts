@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {AppDataService} from '../services/app-data.service';
+import {AdminService} from './admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,10 +10,10 @@ import {AppDataService} from '../services/app-data.service';
 export class AdminComponent implements OnInit {
   users$;
 
-  constructor(private appDataService: AppDataService) {
+  constructor(private adminService: AdminService) {
   }
 
   ngOnInit() {
-    this.users$ = this.appDataService.getUsers();
+    this.users$ = this.adminService.getUsers();
   }
 }

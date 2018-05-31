@@ -1,7 +1,7 @@
 ///////////////////////////////////
 // Request
 
-import { NumberRange, DateRange } from '../../z_shared/schema/shared.schema';
+import { NumberRange, DateRange } from '../../a_shared/schema/shared.schema';
 
 import { Employee } from '../employee.schema';
 

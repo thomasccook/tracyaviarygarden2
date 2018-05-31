@@ -2,25 +2,29 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {Http, HttpModule} from '@angular/http';
-import {AuthConfig, AuthHttp} from 'angular2-jwt';
-
 import { HttpClientModule} from '@angular/common/http';
 
-import {AppRoutingModule} from './app-routing.module';
+import {AuthConfig, AuthHttp} from 'angular2-jwt';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {AdminComponent} from './admin/admin.component';
-import {LoginComponent} from './login/login.component';
-import {UserComponent} from './user/user.component';
-import {PowertableComponent} from './powertable/powertable.component';
+import {AppRoutingModule} from './app-routing.module';
 
-import {UserService} from './services/user.service';
-import {AuthenticationService} from './services/authentication.service';
-import {AuthGuard} from './guards/auth-guard.service';
-import {AdminAuthGuard} from './guards/admin-auth-guard.service';
-import {TOKEN_NAME} from './services/auth.constant';
-import {AppDataService} from './services/app-data.service';
+import {AdminComponent} from './admin/admin.component';
+
+import {HomeComponent} from './home/home.component';
+
+import {LoginComponent} from './login/login.component';
+import {LoginService} from './login/login.service';
+
+import {UserComponent} from './user/user.component';
+import {UserService} from './user/user.service';
+
+// Shared
+import {AuthenticationService} from './a_shared/security/authentication.service';
+import {AuthGuard} from './a_shared/security/auth-guard.service';
+import {AdminAuthGuard} from './a_shared/security/admin-auth-guard.service';
+import {TOKEN_NAME} from './a_shared/security/auth.constant';
+
 
 export function authHttpServiceFactory(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -36,11 +40,11 @@ export function authHttpServiceFactory(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    
     AdminComponent,
-    UserComponent,
-    PowertableComponent,
-    LoginComponent
+    HomeComponent,
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -53,10 +57,10 @@ export function authHttpServiceFactory(http: Http) {
   providers: [
     {provide: AuthHttp, useFactory: authHttpServiceFactory, deps: [Http]},
     AuthenticationService,
-    UserService,
     AuthGuard,
     AdminAuthGuard,
-    AppDataService
+    LoginService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

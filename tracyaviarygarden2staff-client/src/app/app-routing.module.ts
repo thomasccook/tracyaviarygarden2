@@ -3,12 +3,11 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
-import {AuthGuard} from './guards/auth-guard.service';
-import {AdminAuthGuard} from './guards/admin-auth-guard.service';
+import {AuthGuard} from './a_shared/security/auth-guard.service';
+import {AdminAuthGuard} from './a_shared/security/admin-auth-guard.service';
 
 import {HomeComponent} from './home/home.component';
 import {UserComponent} from './user/user.component';
-import {PowertableComponent} from './powertable/powertable.component';
 
 import { EmployeeModule } from './employee/employee.module';
 
@@ -24,11 +23,6 @@ const routes: Routes = [
   {
       path: 'user',
       component: UserComponent,
-      canActivate: [AuthGuard]
-  },
-  {
-      path: 'powertable',
-      component: PowertableComponent,
       canActivate: [AuthGuard]
   },
   { 

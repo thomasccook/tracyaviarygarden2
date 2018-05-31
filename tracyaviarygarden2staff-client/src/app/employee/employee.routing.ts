@@ -5,7 +5,7 @@ import { EmployeeSearchComponent }    from './search/employee_search.component';
 import { EmployeeViewComponent }    from './view/employee_view.component';
 import { EmployeeEditComponent }    from './edit/employee_edit.component';
 
-import {AuthGuard} from '../guards/auth-guard.service';
+import {AuthGuard} from '../a_shared/security/auth-guard.service';
 
 const routes = [
   { path: 'employee_search', component: EmployeeSearchComponent, canActivate: [AuthGuard]},

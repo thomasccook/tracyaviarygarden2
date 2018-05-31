@@ -10,7 +10,7 @@ import { EmployeeViewComponent }   from './view/employee_view.component';
 import { EmployeeEditComponent }   from './edit/employee_edit.component';
 
 
-import { HighlightDirective } from '../z_shared/highlight.directive';
+import { HighlightDirective } from '../a_shared/highlight.directive';
 import { EmployeeService }     from './employee.service';
 
 import { EmployeeRouting }   from './employee.routing';
@@ -18,15 +18,15 @@ import { EmployeeRouting }   from './employee.routing';
 
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
-import { IdPopupComponent } from '../z_shared/popup/id_popup/id_popup.component';
-import { StringPatternPopupComponent } from '../z_shared/popup/string_pattern_popup/string_pattern_popup.component';
-import { NumberRangePopupComponent } from '../z_shared/popup/number_range_popup/number_range_popup.component';
-import { DateRangePopupComponent } from '../z_shared/popup/date_range_popup/date_range_popup.component';
-import { EmployeeTypePopupComponent } from '../z_shared/popup/employee_type_popup/employee_type_popup.component';
+import { IdPopupComponent } from '../a_shared/popup/id_popup/id_popup.component';
+import { StringPatternPopupComponent } from '../a_shared/popup/string_pattern_popup/string_pattern_popup.component';
+import { NumberRangePopupComponent } from '../a_shared/popup/number_range_popup/number_range_popup.component';
+import { DateRangePopupComponent } from '../a_shared/popup/date_range_popup/date_range_popup.component';
+import { EmployeeTypePopupComponent } from '../a_shared/popup/employee_type_popup/employee_type_popup.component';
 
-import { ColumnPopupComponent } from '../z_shared/popup/column_popup/column_popup.component';
+import { ColumnPopupComponent } from '../a_shared/popup/column_popup/column_popup.component';
 
-import {AuthenticationService} from '../services/authentication.service';
+import {AuthenticationService} from '../a_shared/security/authentication.service';
 
 import {authHttpServiceFactory} from '../app.module';
 

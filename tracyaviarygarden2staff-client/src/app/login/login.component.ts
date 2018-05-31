@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 
-import {AuthenticationService} from '../services/authentication.service';
-import {UserService} from '../services/user.service';
+import {AuthenticationService} from '../a_shared/security/authentication.service';
+import {LoginService} from './login.service';
 
 @Component({
   selector: 'login',
@@ -18,12 +18,12 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private authenticationService: AuthenticationService,
-              private userService: UserService) {
+              private loginService: LoginService) {
     this.redirectUrl = this.activatedRoute.snapshot.queryParams['redirectTo'];
   }
 
   ngOnInit(): void {
-    this.userService.logout();
+    this.loginService.logout();
   }
 
   login() {
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.loading = false;
 
           if (result) {
-            this.userService.login(result);
+            this.loginService.login(result);
             this.navigateAfterSuccess();
           } else {
             this.error = 'Username or password is incorrect';
